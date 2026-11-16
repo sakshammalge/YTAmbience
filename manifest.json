@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "YTAmbience",
+  "version": "1.0.0",
+  "description": "Soft, blurred ambient glow around YouTube videos when you're not in fullscreen.",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["src/defaults.js", "src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "YTAmbience",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": { "id": "ytambience@sakshammalge.github.io", "strict_min_version": "121.0" }
+  }
+}
